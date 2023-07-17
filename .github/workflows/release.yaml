@@ -2,7 +2,7 @@ name: release
 on:
   push:
     tags:
-      - 'v[0-9]+.[0-9]+.*'
+      - "v[0-9]+.[0-9]+.*"
 jobs:
   build:
     uses: ./.github/workflows/build.yaml
@@ -58,8 +58,8 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/deislabs/containerd-wasm-shims/examples/spin-rust-hello:${{ env.RELEASE_VERSION }}
-            ghcr.io/deislabs/containerd-wasm-shims/examples/spin-rust-hello:latest
+            ghcr.io/stevesloka/containerd-wasm-shims/examples/spin-rust-hello:${{ env.RELEASE_VERSION }}
+            ghcr.io/stevesloka/containerd-wasm-shims/examples/spin-rust-hello:latest
           context: images/spin
           platforms: wasi/wasm
       - name: build and push Spin DotNet
@@ -67,8 +67,8 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/deislabs/containerd-wasm-shims/examples/spin-dotnet-hello:${{ env.RELEASE_VERSION }}
-            ghcr.io/deislabs/containerd-wasm-shims/examples/spin-dotnet-hello:latest
+            ghcr.io/stevesloka/containerd-wasm-shims/examples/spin-dotnet-hello:${{ env.RELEASE_VERSION }}
+            ghcr.io/stevesloka/containerd-wasm-shims/examples/spin-dotnet-hello:latest
           context: images/spin_dotnet
           platforms: wasi/wasm
       - name: build and push Slight hello world
@@ -76,8 +76,8 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/deislabs/containerd-wasm-shims/examples/slight-rust-hello:${{ env.RELEASE_VERSION }}
-            ghcr.io/deislabs/containerd-wasm-shims/examples/slight-rust-hello:latest
+            ghcr.io/stevesloka/containerd-wasm-shims/examples/slight-rust-hello:${{ env.RELEASE_VERSION }}
+            ghcr.io/stevesloka/containerd-wasm-shims/examples/slight-rust-hello:latest
           context: images/slight
           platforms: wasi/wasm
       - name: build and push Wasm Workers Server (wws) hello world (JS)
@@ -85,8 +85,8 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/deislabs/containerd-wasm-shims/examples/wws-js-hello:${{ env.RELEASE_VERSION }}
-            ghcr.io/deislabs/containerd-wasm-shims/examples/wws-js-hello:latest
+            ghcr.io/stevesloka/containerd-wasm-shims/examples/wws-js-hello:${{ env.RELEASE_VERSION }}
+            ghcr.io/stevesloka/containerd-wasm-shims/examples/wws-js-hello:latest
           context: images/wws
           platforms: wasi/wasm
       - name: untar x86_64 musl artifacts into ./deployments/k3d/.tmp dir
@@ -99,8 +99,8 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/deislabs/containerd-wasm-shims/examples/k3d:${{ env.RELEASE_VERSION }}
-            ghcr.io/deislabs/containerd-wasm-shims/examples/k3d:latest
+            ghcr.io/stevesloka/containerd-wasm-shims/examples/k3d:${{ env.RELEASE_VERSION }}
+            ghcr.io/stevesloka/containerd-wasm-shims/examples/k3d:latest
           context: deployments/k3d
           platforms: linux/amd64,linux/arm64
       - name: clear
