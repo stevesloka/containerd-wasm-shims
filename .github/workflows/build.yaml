@@ -9,8 +9,14 @@ jobs:
     strategy:
       matrix:
         config:
-          - { os: "self-hosted", arch: "x86_64" }
-          - { os: "self-hosted", arch: "aarch64" }
+          - {
+              os: "ubuntu-latest",
+              arch: "x86_64",
+            }
+          - {
+              os: "ubuntu-latest",
+              arch: "aarch64"
+            }
     env:
       ARCH: ${{ matrix.config.arch }}
     steps:
