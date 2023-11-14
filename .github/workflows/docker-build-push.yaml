@@ -68,7 +68,7 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/${{ env.GITHUB_REPOSITORY }}/${{ matrix.image.imageName }}:${{ env.RELEASE_VERSION }}
-            ghcr.io/${{ env.GITHUB_REPOSITORY }}/${{ matrix.image.imageName }}:latest
+            ghcr.io/${{ github.repository }}/${{ matrix.image.imageName }}:${{ env.RELEASE_VERSION }}
+            ghcr.io/${{ github.repository }}/${{ matrix.image.imageName }}:latest
           context: ${{ matrix.image.context }}
           platforms: wasi/wasm
